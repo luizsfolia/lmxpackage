@@ -122,10 +122,23 @@ type
   end;
   
   TContextUsuario = class(TContextDataBase<TUsuario>, IContextUsuario);
-  
-  TLmxGeradorConsultaUsuario = class(TLmxGeradorConsulta)
+```  
+
+Exemplo Gerador de Consulta
+
+```delphi
+TLmxGeradorConsultaUsuario = class(TLmxGeradorConsulta)
   public
     procedure DoGerarConsulta; override;
   end;
-```  
 
+procedure TLmxGeradorConsultaUsuario.DoGerarConsulta;
+begin
+  inherited;
+  From('usuario');
+  AddCampo('usuario', '*');
+  AddCampoCalculado('0', 'teste');
+end;
+
+
+```
