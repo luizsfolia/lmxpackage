@@ -22,7 +22,99 @@ https://github.com/luizsfolia/lmxpackage/tree/main/exemplos/ExemploServerLmx
 
 Abaixo seguem alguns exemplos utilizados do projeto acima
 
-Classe DataBaseExemplo
+## Crinado Server HTTP
+
+```delphi
+var
+  FServer : TLmxHttpServer;
+begin
+  FServer := TLmxHttpServer.Create;
+  FServer.AdicionarComando(TModuloCllientes, '/Clientes'); // Classe descrita abaixo na opção sem ORM 
+  FServer.Ativar(8500); // server sendo ativado na porta 8500
+end
+```
+## Sem OrmLmx
+
+### Exemplo de classe de comando
+
+```delphi
+  TModuloCllientes = class(TLmxServerComand)
+  public
+    [HttpGet]
+    [TLmxAttributeComando('')]
+    function GetClientes : ILmxRetorno<TClientes>;
+
+    [HttpGet]
+    [TLmxAttributeComando('/{id}')]
+    function GetCliente([FromParams] const id : Integer) : ILmxRetorno<TCliente>;
+
+    [HttpPost]
+    [TLmxAttributeComando('')]
+    function PostCliente(const pCliente : TCliente) : ILmxRetorno<TCliente>;
+  end;
+```
+
+## Implementação da classe de comando
+
+```delphi
+function TModuloCllientes.GetCliente(const id: Integer): ILmxRetorno<TCliente>;
+begin
+  Result := TLmxRetorno<TCliente>.Create;
+  Result.Retorno.Nome := 'Luiz';
+  Result.Retorno.Id := id;
+end;
+
+function TModuloCllientes.GetClientes : ILmxRetorno<TClientes>;
+var
+  lCliente: TCliente;
+begin
+  Result := TLmxRetorno<TClientes>.Create;
+
+  lCliente := TCliente.Create;
+  lCliente.Nome := 'Luiz';
+  lCliente.Id := 1;
+
+  Result.Retorno.Add(lCliente);
+
+  lCliente := TCliente.Create;
+  lCliente.Nome := 'Ricardo';
+  lCliente.Id := 2;
+
+  Result.Retorno.Add(lCliente);
+
+end;
+
+function TModuloCllientes.PostCliente(const pCliente: TCliente): ILmxRetorno<TCliente>;
+begin
+  // Salvar no DataBase o pCliente
+  Result := GetCliente(pCliente.id);
+end;
+```
+
+## classe de modelo
+```delphi
+
+uses
+  uLmxCore, uLmxAttributes, System.Classes;
+
+type
+
+  [TLmxAttributeMetadata]
+  TCliente = class(TBaseTabelaPadrao)
+  private
+    FNome: string;
+  public
+    [TLmxAttributeMetadata(80)]
+    property Nome : string read FNome write FNome;
+  end;
+
+  TClientes = class(TBaseList<TCliente>)
+  end;
+```
+
+
+## Com Orm Lmx
+### Classe DataBaseExemplo
 
 ```delphi
 uses
