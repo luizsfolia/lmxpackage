@@ -145,7 +145,7 @@ type
   TUsuarios = class(TBaseList<TUsuario>);
 ```
 
-Conexao com DataBase (Firebird)
+### Conexao com DataBase (Firebird)
   
 ```delphi
   TContextDataBaseConfig.Default.RegistrarConexao(TLmxConexaoFirebird,
@@ -159,7 +159,7 @@ Conexao com DataBase (Firebird)
     end
 ```  
   
-Criando/Atualizando DataBase  
+### Criando/Atualizando DataBase  
   
 ```delphi
   lConexao := TLmxConexaoFirebird.Create;
@@ -179,14 +179,14 @@ Criando/Atualizando DataBase
 ```
   
   
-Criando Server  HTTP
+### Criando Server  HTTP
   
 ```delphi
   FServer := TLmxHttpServer.Create;
   FServer.AdicionarComando(THttpUsuario, '/Usuarios');
 ```
   
-Classe Exemplo Http
+### Classe Exemplo Http
   
 ```delphi
 
@@ -200,7 +200,7 @@ type
   THttpUsuario = class(THttp<TUsuario,IContextUsuario,TBaseList<TUsuario>>);
 ```
   
-Exemplo Context
+### Exemplo Context
   
 ```delphi
 uses
@@ -222,7 +222,7 @@ type
   TContextUsuario = class(TContextDataBase<TUsuario>, IContextUsuario);
 ```  
 
-Exemplo Gerador de Consulta
+### Exemplo Gerador de Consulta
 
 ```delphi
 TLmxGeradorConsultaUsuario = class(TLmxGeradorConsulta)
