@@ -18,6 +18,7 @@ boss install https://github.com/luizsfolia/lmxpackage.git
 
 Classe DataBaseExemplo
 
+```delphi
 uses
   uLmxCore, uLmxAttributes, System.Math, Generics.Collections, System.Classes;
 
@@ -46,11 +47,12 @@ type
   end;
 
   TUsuarios = class(TBaseList<TUsuario>);
-
+```
 
 Conexao com DataBase (Firebird)
   
-    TContextDataBaseConfig.Default.RegistrarConexao(TLmxConexaoFirebird,
+```delphi
+  TContextDataBaseConfig.Default.RegistrarConexao(TLmxConexaoFirebird,
     procedure (const pControleConexao : TLmxControleConexao)
     begin
       pControleConexao.HostName := 'localhost';
@@ -59,11 +61,12 @@ Conexao com DataBase (Firebird)
       pControleConexao.User_Name := 'sysdba';
       pControleConexao.Password := 'masterkey';
     end
-  
+```  
   
 Criando/Atualizando DataBase  
   
-      lConexao := TLmxConexaoFirebird.Create;
+```delphi
+  lConexao := TLmxConexaoFirebird.Create;
       try
         lConexao.ConfigurarConexao(pControleConexao);
 
@@ -77,16 +80,20 @@ Criando/Atualizando DataBase
       finally
         lConexao.Free;
       end;
-
+```
   
   
 Criando Server  HTTP
   
+```delphi
   FServer := TLmxHttpServer.Create;
   FServer.AdicionarComando(THttpUsuario, '/Usuarios');
+```
   
 Classe Exemplo Http
   
+```delphi
+
 uses
   System.Classes, 
   uLmxHttpServer, uLmxHelper, uLmxAttributes, uLmx.Context.Usuario, uLmx.Model.Usuario,
@@ -95,9 +102,11 @@ uses
 type
 
   THttpUsuario = class(THttp<TUsuario,IContextUsuario,TBaseList<TUsuario>>);
+```
   
 Exemplo Context
   
+```delphi
 uses
   System.Classes, 
   System.SysUtils, 
@@ -114,7 +123,6 @@ type
     ['{C783A57C-B5B6-42E8-A466-9075583DE035}']
   end;
   
-```delphi
   TContextUsuario = class(TContextDataBase<TUsuario>, IContextUsuario);
   
   TLmxGeradorConsultaUsuario = class(TLmxGeradorConsulta)
