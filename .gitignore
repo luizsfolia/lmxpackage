@@ -8,3 +8,7 @@ exemplos/ExemploServerLmx/server/context/__history/
 *.bak
 exemplos/ExemploServerLmx/server/Win32/
 *.local
+*.identcache
+exemplos/ServerExemploSemOrm/__history/
+exemplos/ServerExemploSemOrm/Win32/
+*.skincfg

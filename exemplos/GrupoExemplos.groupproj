@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{F84DFE57-F635-46AA-B8BA-2164B9EE72E1}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="ExemploServerLmx\server\ExemploServerOrmCmd.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ExemploServerLmx\server\ExemploServerOrmVcl.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="ServerExemploSemOrm\ServerExemploSemOrm.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="ExemploServerOrmCmd">
+        <MSBuild Projects="ExemploServerLmx\server\ExemploServerOrmCmd.dproj"/>
+    </Target>
+    <Target Name="ExemploServerOrmCmd:Clean">
+        <MSBuild Projects="ExemploServerLmx\server\ExemploServerOrmCmd.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExemploServerOrmCmd:Make">
+        <MSBuild Projects="ExemploServerLmx\server\ExemploServerOrmCmd.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExemploServerOrmVcl">
+        <MSBuild Projects="ExemploServerLmx\server\ExemploServerOrmVcl.dproj"/>
+    </Target>
+    <Target Name="ExemploServerOrmVcl:Clean">
+        <MSBuild Projects="ExemploServerLmx\server\ExemploServerOrmVcl.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExemploServerOrmVcl:Make">
+        <MSBuild Projects="ExemploServerLmx\server\ExemploServerOrmVcl.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ServerExemploSemOrm">
+        <MSBuild Projects="ServerExemploSemOrm\ServerExemploSemOrm.dproj"/>
+    </Target>
+    <Target Name="ServerExemploSemOrm:Clean">
+        <MSBuild Projects="ServerExemploSemOrm\ServerExemploSemOrm.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ServerExemploSemOrm:Make">
+        <MSBuild Projects="ServerExemploSemOrm\ServerExemploSemOrm.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="ExemploServerOrmCmd;ExemploServerOrmVcl;ServerExemploSemOrm"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="ExemploServerOrmCmd:Clean;ExemploServerOrmVcl:Clean;ServerExemploSemOrm:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="ExemploServerOrmCmd:Make;ExemploServerOrmVcl:Make;ServerExemploSemOrm:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

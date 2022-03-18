@@ -1,4 +1,4 @@
-program ExemploServer;
+program ExemploServerOrmVcl;
 
 uses
   Vcl.Forms,

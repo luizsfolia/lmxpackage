@@ -1,4 +1,4 @@
-program ExemploServerCmd;
+program ExemploServerOrmCmd;
 
 {$APPTYPE CONSOLE}
 
