@@ -1,1 +1,14 @@
 # lmxpackage
+
+Versão atual 1.0
+
+# Instalação
+
+Não é nescessária nenhuma instalação, basta adicionar o caminho do repositório no path do Delphi
+
+# boss
+
+para usar no boss, basta instalar o boos e no seu projeto usar
+
+boos init
+boss install 
