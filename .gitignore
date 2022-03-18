@@ -7,3 +7,4 @@ exemplos/ExemploServerLmx/server/context/__history/
 *.stat
 *.bak
 exemplos/ExemploServerLmx/server/Win32/
+*.local
