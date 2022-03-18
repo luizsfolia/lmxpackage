@@ -42,8 +42,6 @@ type
     property Login : string read FLogin write FLogin;
     [TLmxAttributeMetadata]
     property TipoUsuario : TTipoUsuario read FTipoUsuario write FTipoUsuario;
-
-    function IsAdmin : Boolean;
   end;
 
   TUsuarios = class(TBaseList<TUsuario>);
