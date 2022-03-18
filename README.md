@@ -16,6 +16,12 @@ boss install https://github.com/luizsfolia/lmxpackage.git
 
 # Exemplos
 
+
+você pode abrir um server de exemplo que está em 
+https://github.com/luizsfolia/lmxpackage/tree/main/exemplos/ExemploServerLmx
+
+Abaixo seguem alguns exemplos utilizados do projeto acima
+
 Classe DataBaseExemplo
 
 ```delphi
