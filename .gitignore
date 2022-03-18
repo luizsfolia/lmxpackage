@@ -1,0 +1,9 @@
+*.dcu
+database/__history/
+core/__history/
+exemplos/ExemploServerLmx/server/__history/
+exemplos/ExemploServerLmx/server/http/__history/
+exemplos/ExemploServerLmx/server/context/__history/
+*.stat
+*.bak
+exemplos/ExemploServerLmx/server/Win32/
