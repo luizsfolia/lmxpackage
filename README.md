@@ -113,11 +113,13 @@ type
   IContextUsuario = interface(IContextDataBase<TUsuario>)
     ['{C783A57C-B5B6-42E8-A466-9075583DE035}']
   end;
-
+  
+```delphi
   TContextUsuario = class(TContextDataBase<TUsuario>, IContextUsuario);
   
   TLmxGeradorConsultaUsuario = class(TLmxGeradorConsulta)
   public
     procedure DoGerarConsulta; override;
   end;
+```  
 
