@@ -8,7 +8,7 @@ Não é nescessária nenhuma instalação, basta adicionar o caminho do reposit�
 
 # boss
 
-para usar no boss, basta instalar o boos e no seu projeto usar
+para usar no boss, basta instalar o boss e no seu projeto usar
 
 boos init
 
