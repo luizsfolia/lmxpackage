@@ -1,6 +1,6 @@
 # lmxpackage
 
-Versão atual 1.0
+Versão atual 1.0.0
 
 # Instalação
 
@@ -11,4 +11,5 @@ Não é nescessária nenhuma instalação, basta adicionar o caminho do reposit�
 para usar no boss, basta instalar o boos e no seu projeto usar
 
 boos init
-boss install 
+
+boss install https://github.com/luizsfolia/lmxpackage.git
