@@ -18,7 +18,7 @@ boss install https://github.com/luizsfolia/lmxpackage.git
 
 
 você pode abrir um server de exemplo que está em 
-https://github.com/luizsfolia/lmxpackage/tree/main/exemplos/ExemploServerLmx
+https://github.com/luizsfolia/lmxpackage/blob/main/exemplos/GrupoExemplos.groupproj
 
 Abaixo seguem alguns exemplos utilizados do projeto acima
 
